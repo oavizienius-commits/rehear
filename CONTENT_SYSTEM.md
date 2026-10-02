@@ -261,6 +261,8 @@ Every scenario should contain:
 7. Outcome
 8. Useful professional language
 
+Rich scenario context may exist outside the spoken dialogue. Use it to guide realism, but surface background information only when a speaker would naturally mention it.
+
 At least one of these should happen:
 
 - disagreement

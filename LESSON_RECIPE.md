@@ -153,7 +153,12 @@ Create a concise scenario brief with:
 - Domain
 - Situation
 - Roles
+- When the conversation happens
 - Immediate context
+- Relevant prior context
+- What both speakers already know
+- What new information triggered the conversation
+- What should remain implicit rather than be explained in dialogue
 - Tension / uncertainty / unresolved issue
 - Goal
 - Expected outcome
@@ -309,6 +314,8 @@ Check:
 - Is one speaker explaining something the other would obviously already know just for the learner's benefit?
 - Are responsibilities realistic?
 - Are any procedures, regulations, or technical facts invented?
+
+Shared background knowledge should remain implicit unless a speaker would naturally refer to it. Do not explain it merely for the learner's benefit.
 
 Fix unrealistic content.
 
