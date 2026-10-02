@@ -1,6 +1,10 @@
 # Rehear
 
-Rehear is a browser-based learning product for professionals who want to improve real-world English listening comprehension. It uses short, realistic workplace scenarios to expose learners to natural professional language and plausible ways of handling common work situations.
+Rehear is a browser-based tool that helps professionals improve real-world English listening and workplace communication through short, realistic work scenarios.
+
+Lessons span different professional contexts, teams, and situations — helping learners practise natural spoken English while observing how people clarify, disagree, explain, negotiate, raise concerns, and make decisions at work.
+
+**Listen → Pause → Repeat → Write → Replay → Review transcript → Answer one question**
 
 ## Current MVP scope
 
