@@ -18,7 +18,10 @@ export type Lesson = {
     secondary?: string[];
   };
   audioUrl?: string;
-  transcript?: string;
+  transcript?: {
+    speaker: string;
+    text: string;
+  }[];
   question?: {
     text: string;
     options: [string, string, string, string];

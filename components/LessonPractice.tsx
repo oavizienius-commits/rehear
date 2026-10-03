@@ -16,7 +16,7 @@ type ListeningSection = {
 type LessonPracticeProps = {
   audioUrl: string;
   durationSeconds: number;
-  transcript: string;
+  transcript: NonNullable<Lesson["transcript"]>;
   question: Question;
 };
 
@@ -270,7 +270,9 @@ export function LessonPractice({
             <p className="mt-2 text-sm text-stone-600">
               Used a notebook? Compare your writing with the transcript below.
             </p>
-            <p className="mt-5 whitespace-pre-wrap leading-7 text-stone-800">{transcript}</p>
+            <p className="mt-5 whitespace-pre-wrap leading-7 text-stone-800">
+              {transcript.map(({ speaker, text }) => `${speaker}: ${text}`).join("\n\n")}
+            </p>
           </section>
           <section className="border-t border-stone-200 pt-8">
             <h2 className="text-xl font-semibold text-stone-900">{question.text}</h2>
