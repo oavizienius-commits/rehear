@@ -374,6 +374,8 @@ Do not slow or simplify the language unnaturally just to make listening easier.
 
 Prepare the final script for AI-generated speech.
 
+This pass applies to the canonical spoken content, before any production tags are added.
+
 Use:
 
 - clean speaker labels
@@ -385,7 +387,7 @@ Use:
 Avoid:
 
 - stage directions inside spoken text
-- bracketed acting instructions mixed into dialogue
+- bracketed acting instructions mixed into the canonical dialogue
 - long paragraphs
 - awkward punctuation
 - pronunciation notes inside spoken text
@@ -398,7 +400,9 @@ The script should be ready for text-to-speech without major rewriting.
 
 ## Step 12 — Freeze the Final Spoken Script
 
-Once naturalness, realism, professional behaviour, listening suitability, and TTS checks pass, treat the script as final.
+Once naturalness, realism, professional behaviour, listening suitability, and TTS preparation checks pass, treat the script as final.
+
+The final spoken script is canonical spoken content.
 
 Do not create the transcript from an earlier draft.
 
@@ -420,14 +424,84 @@ Requirements:
 - no summary
 - no vocabulary explanations
 - no rewritten learner-friendly version
+- no performance tags
 
 The transcript is the learner's reference for comparing what they heard and wrote.
 
 Accuracy is essential.
 
+The final spoken script and exact transcript together are the canonical spoken content. They must contain the same spoken words in the same order.
+
 ---
 
-## Step 14 — Create One Comprehension Question
+## Step 14 — TTS Performance Pass
+
+Create a TTS performance script from the frozen final spoken script.
+
+The TTS performance script is production content. It must contain the exact same spoken words as the canonical spoken content, with optional non-spoken performance tags added only where they improve delivery.
+
+Hard spoken-word identity rule:
+
+> If all performance tags are removed from the TTS performance script, the remaining dialogue must exactly reproduce the frozen final spoken script.
+
+No spoken words may be added, removed, reordered, substituted, or rewritten.
+
+Do not alter capitalization, punctuation, wording, or sentence structure during this pass solely to create emotion.
+
+Performance tags may only clarify delivery already supported by the dialogue and scenario. They must not change or invent a speaker's:
+
+- meaning
+- attitude
+- intention
+- relationship
+- emotional state
+
+Use performance tags selectively. Most turns should remain untagged.
+
+Do not impose a hard quota. For a typical 2.5–3.5 minute professional conversation, roughly 3–7 meaningful cues may be reasonable, but fewer or more are acceptable when genuinely justified by the scenario.
+
+Prefer subtle professional delivery cues such as:
+
+- `[slightly concerned]`
+- `[thoughtful]`
+- `[hesitant]`
+- `[curious]`
+- `[reassuring]`
+- `[relieved]`
+- `[firmly]`
+- `[matter-of-fact]`
+
+Treat audible reactions and pacing cues more conservatively, for example:
+
+- `[sighs]`
+- `[exhales]`
+- `[brief pause]`
+
+Do not add reactions merely to make the dialogue more expressive. A reaction must be supported by context.
+
+---
+
+## Step 15 — TTS Quality Check
+
+Review the TTS performance script before audio generation.
+
+Check:
+
+- removing every performance tag exactly reproduces the frozen final spoken script
+- no spoken words, capitalization, punctuation, sentence structure, or speaker order have changed
+- every tag is supported by the dialogue and scenario
+- tags clarify delivery without inventing meaning, attitude, intention, relationship, or emotional state
+- tags are sparse and most turns remain untagged
+- audible reactions and pacing cues are genuinely justified
+- the exact learner-facing transcript contains no performance tags
+
+If a tag is unnecessary, unsupported, or too strong, remove or revise the tag without changing the canonical spoken content.
+
+If the spoken words themselves require a change, return to the appropriate earlier pass, then freeze the script and recreate the exact transcript and TTS performance script.
+
+---
+
+## Step 16 — Create One Comprehension Question
 
 Create exactly one multiple-choice question for the MVP.
 
@@ -457,7 +531,7 @@ Also provide a short explanation of the correct answer.
 
 ---
 
-## Step 15 — Final Quality Gate
+## Step 17 — Final Quality Gate
 
 Before returning the finished lesson, review it against `CONTENT_SYSTEM.md`.
 
@@ -507,9 +581,16 @@ The lesson must pass all of the following:
 
 - script is clean and voice-ready
 
+### TTS performance
+
+- performance script preserves the canonical spoken content exactly when tags are removed
+- tags are subtle, sparse, and supported by context
+- tags do not invent or change meaning, attitude, intention, relationship, or emotional state
+
 ### Transcript
 
 - exact match to final spoken script
+- no performance tags
 
 ### Assessment
 
@@ -523,7 +604,7 @@ Do not return a knowingly weak draft and merely list its problems.
 
 ---
 
-## Step 16 — Produce Structured Output
+## Step 18 — Produce Structured Output
 
 Return the lesson in this order:
 
@@ -533,10 +614,11 @@ Return the lesson in this order:
 4. Target professional language
 5. Final spoken script
 6. Exact transcript
-7. Comprehension question
-8. Correct answer
-9. Explanation
-10. Content quality review
+7. TTS performance script
+8. Comprehension question
+9. Correct answer
+10. Explanation
+11. Content quality review
 
 The exact machine-readable JSON schema may be defined separately.
 
@@ -565,6 +647,8 @@ Follow this internal sequence:
 → TTS preparation pass  
 → freeze final script  
 → create exact transcript  
+→ create TTS performance script  
+→ TTS quality check  
 → create one comprehension question  
 → final quality gate  
 → structured output**

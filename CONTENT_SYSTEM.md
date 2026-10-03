@@ -538,6 +538,19 @@ Therefore:
 
 Scripts should work when read aloud without requiring major rewriting.
 
+The audio production layer distinguishes between:
+
+1. **Canonical spoken content** — the final spoken script and exact transcript
+2. **Production content** — the TTS performance script, containing the same spoken dialogue with optional non-spoken delivery tags
+
+Performance tags are production metadata. They must never appear in the learner-facing transcript.
+
+If all performance tags are removed from the TTS performance script, the remaining dialogue must exactly reproduce the canonical spoken dialogue.
+
+Tags should be subtle, supported by the scenario and dialogue, and sparse by default. They must not invent emotions, intentions, attitudes, or meanings that the canonical content does not support.
+
+Provider-specific syntax, currently ElevenLabs v4-style square-bracket tags, belongs only to the production layer. It is not part of the canonical lesson content, so lessons can remain portable to other TTS providers.
+
 ---
 
 ## Transcript
@@ -549,6 +562,8 @@ Do not simplify, summarise, or rewrite the transcript after generating the audio
 If the spoken script changes before final audio generation, update the transcript.
 
 The transcript is the learner's reference for reviewing what they heard and wrote, so accuracy is essential.
+
+The learner-facing transcript must not contain performance tags or other production metadata.
 
 ---
 
@@ -592,10 +607,11 @@ When generating a finished lesson, the content system should support output in t
 3. Target professional language
 4. Final spoken script
 5. Exact transcript
-6. Comprehension question
-7. Correct answer
-8. Explanation
-9. Content quality review
+6. TTS performance script
+7. Comprehension question
+8. Correct answer
+9. Explanation
+10. Content quality review
 
 The final machine-readable lesson format may later be defined separately by the lesson generation recipe or application schema.
 
@@ -640,6 +656,8 @@ Does the script contain varied, natural speech that is worth practising intensiv
 
 ### TTS Suitability
 Will the script sound natural when converted to speech?
+
+Does the TTS performance script preserve the canonical spoken dialogue exactly when tags are removed, with only subtle, context-supported tags used where needed?
 
 ### Assessment Quality
 Does the final question test the main meaning rather than a minor detail?
