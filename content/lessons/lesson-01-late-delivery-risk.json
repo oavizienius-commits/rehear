@@ -1,0 +1,31 @@
+{
+  "id": "01",
+  "slug": "late-delivery-risk-before-release",
+  "title": "Are We Still Good for Tomorrow?",
+  "domain": "Product / IT",
+  "level": "B2",
+  "duration": "2 min 21 sec",
+  "durationSeconds": 140.826062,
+  "scenario": "A Product Manager and Full-stack Engineer discuss a newly discovered testing risk one day before a planned release and decide whether to reduce scope or move the release.",
+  "communicationSkill": {
+    "primary": "risk_communication",
+    "secondary": [
+      "scope_negotiation",
+      "expectation_setting",
+      "communicating_uncertainty"
+    ]
+  },
+  "audioUrl": "/audio/lesson-01-late-delivery-risk.mp3",
+  "transcript": "Maya: Hey, Daniel. Are we still good for tomorrow?\n\nDaniel: For most of it, yeah. But there's an issue with the recovery part.\n\nMaya: At stand-up this morning you said we were still on track. What did you find?\n\nDaniel: I ran through the full flow this afternoon. Recovery touches a few more cases than I expected.\n\nMaya: More development work?\n\nDaniel: A little, but that's not the main problem. I can probably finish the code. I'm more concerned about testing it properly before tomorrow.\n\nMaya: How much more testing are we talking about?\n\nDaniel: Hard to say exactly. That's part of the problem. I found a couple of paths I hadn't accounted for, and I don't want to assume they're the only ones.\n\nMaya: Okay. So if we keep everything in scope, what are you recommending?\n\nDaniel: Honestly, we'd have to move the release. I wouldn't be comfortable shipping the whole thing tomorrow.\n\nMaya: Moving everything is going to be difficult. Sales are already preparing around this release.\n\nDaniel: Yeah, I know.\n\nMaya: Is recovery blocking the rest of the onboarding changes?\n\nDaniel: No. That's the good news. We can separate them.\n\nMaya: So we could release the main flow tomorrow and leave recovery as it is?\n\nDaniel: Exactly. Then I can finish the recovery changes and test them properly for the next release.\n\nMaya: Would users notice anything strange?\n\nDaniel: Not really. The current recovery flow would stay in place. The new onboarding changes would still work.\n\nMaya: Okay. Why didn't this come up earlier?\n\nDaniel: I didn't see it until I tested the full path today. The individual pieces looked fine. It was only when I put the whole flow together that the extra cases showed up.\n\nMaya: Right.\n\nDaniel: I should've flagged the uncertainty earlier, though. I was assuming the recovery piece was more isolated than it actually is.\n\nMaya: Fair enough. If we take recovery out, are you confident about the rest?\n\nDaniel: Yes. The main flow is already in good shape. I'd still want tomorrow morning for final checks, but I'm comfortable with that.\n\nMaya: And if we don't take it out?\n\nDaniel: Then we're either rushing the testing or moving the release. I'd rather take that piece out than rush it.\n\nMaya: Yeah, agreed.\n\nDaniel: Okay.\n\nMaya: Let's lock the scope there, then. Main onboarding changes tomorrow. Recovery moves to the next release.\n\nDaniel: Works for me.\n\nMaya: Can you update the ticket and send me a quick note on what's moving?\n\nDaniel: Yep. I'll do that now.\n\nMaya: Thanks. And if anything else comes up in the final checks, flag it early.\n\nDaniel: Will do.",
+  "question": {
+    "text": "What do Maya and Daniel decide to do?",
+    "options": [
+      "Delay the entire onboarding release until the recovery changes are fully tested.",
+      "Release all of the changes tomorrow and reduce the amount of testing.",
+      "Release the main onboarding changes tomorrow and move the recovery changes to the next release.",
+      "Remove the onboarding changes from the sprint and ask Sales to change its plans."
+    ],
+    "correctIndex": 2,
+    "explanation": "They keep the planned release for the main onboarding changes, but move the recovery changes to the next release so they can be tested properly."
+  }
+}
