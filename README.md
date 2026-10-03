@@ -8,14 +8,15 @@ Lessons span different professional contexts, teams, and situations — helping 
 
 ## Current MVP scope
 
-This repository currently provides the smallest working product foundation:
+This repository uses static lesson content and currently includes:
 
 - a responsive lesson library homepage
-- static placeholder lessons for Product, Finance, and Marketing
-- lesson cards with title, domain, CEFR level, duration, and scenario
-- a placeholder route for each lesson at `/lesson/[slug]`
+- Lesson 01, a Product / IT listening practice with audio, pause and replay, transcript review, and one comprehension question
+- static placeholder lessons for Product / IT, Finance, and Marketing
+- lesson cards with title, domain, CEFR level, duration, scenario, and a primary communication skill where available
+- a route for each lesson at `/lesson/[slug]`
 
-Audio playback, pause/replay practice, notes, transcript review, comprehension questions, authentication, persistence, backend services, AI, and analytics are intentionally out of scope for this setup phase.
+Practice notes stay in memory during the lesson. Authentication, persistent storage, backend services, AI, and analytics are not part of the current app.
 
 ## Project documentation
 

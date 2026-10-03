@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { getLesson, lessons } from "@/content/lessons";
+import { LessonPractice } from "@/components/LessonPractice";
+import { formatSkillLabel, getLesson, lessons } from "@/content/lessons";
 
 type LessonPageProps = {
   params: Promise<{ slug: string }>;
@@ -48,19 +49,32 @@ export default async function LessonPage({ params }: LessonPageProps) {
             {lesson.scenario}
           </p>
 
-          <div className="mt-10 rounded-2xl bg-stone-100 p-6">
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-700">
-              Foundation preview
+          {lesson.communicationSkill && (
+            <p className="mt-5 text-sm font-semibold text-emerald-800">
+              {formatSkillLabel(lesson.communicationSkill.primary)}
             </p>
-            <h2 className="mt-3 text-xl font-semibold text-stone-900">
-              Practice experience coming next
-            </h2>
-            <p className="mt-2 leading-7 text-stone-600">
-              This page is ready for the listening and guided practice flow. Audio,
-              replay, notes, transcript review, and questions are intentionally not
-              part of this foundation.
-            </p>
-          </div>
+          )}
+
+          {lesson.audioUrl && lesson.durationSeconds && lesson.transcript && lesson.question ? (
+            <LessonPractice
+              audioUrl={lesson.audioUrl}
+              durationSeconds={lesson.durationSeconds}
+              question={lesson.question}
+              transcript={lesson.transcript}
+            />
+          ) : (
+            <div className="mt-10 rounded-2xl bg-stone-100 p-6">
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-700">
+                Lesson preview
+              </p>
+              <h2 className="mt-3 text-xl font-semibold text-stone-900">
+                Practice experience coming next
+              </h2>
+              <p className="mt-2 leading-7 text-stone-600">
+                This lesson is a placeholder. Its audio and guided practice will be added later.
+              </p>
+            </div>
+          )}
         </article>
       </div>
     </main>

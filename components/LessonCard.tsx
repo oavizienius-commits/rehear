@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import type { Lesson } from "@/content/lessons";
+import { formatSkillLabel, type Lesson } from "@/content/lessons";
 
 type LessonCardProps = {
   lesson: Lesson;
@@ -26,6 +26,12 @@ export function LessonCard({ lesson }: LessonCardProps) {
       <p className="mt-3 flex-1 text-base leading-7 text-stone-600">
         {lesson.scenario}
       </p>
+
+      {lesson.communicationSkill && (
+        <p className="mt-5 text-sm font-medium text-emerald-800">
+          {formatSkillLabel(lesson.communicationSkill.primary)}
+        </p>
+      )}
 
       <Link
         className="mt-8 inline-flex min-h-11 items-center justify-center rounded-full bg-stone-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
