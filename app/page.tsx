@@ -36,7 +36,7 @@ export default function Home() {
                 Choose a scenario
               </h2>
             </div>
-            <p className="text-sm text-stone-500">3 lessons</p>
+            <p className="text-sm text-stone-500">{lessons.length} lessons</p>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -47,7 +47,7 @@ export default function Home() {
         </section>
 
         <footer className="mt-16 border-t border-stone-200 py-8 text-sm text-stone-500">
-          Rehear is currently a small, static MVP foundation.
+          More workplace scenarios are on the way.
         </footer>
       </div>
     </main>
